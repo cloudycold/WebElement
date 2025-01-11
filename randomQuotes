@@ -1,0 +1,19 @@
+<div id="quote-box">
+    <p id="quote"></p>
+    <p id="author"></p>
+    <button onclick="generateQuote()">New Quote</button>
+</div>
+
+<script> const quotes = [ 
+  { quote: "The only way to do great work is to love what you do.", author: "Steve Jobs" }, 
+  { quote: "Life is what happens when you're busy making other plans.", author: "John Lennon" }, 
+  { quote: "Get busy living or get busy dying.", author: "Stephen King" }, 
+  { quote: "You have within you right now, everything you need to deal with whatever the world can throw at you.", author: "Brian Tracy" }, 
+  { quote: "Believe you can and you're halfway there.", author: "Theodore Roosevelt" },
+  { quote: "Respond to every call that excites your spirit. Ignore those that make you fearful and sad, that degrade you back toward disease and death.", author: "Rumi" }
+]; 
+function generateQuote() { const randomIndex = Math.floor(Math.random() * quotes.length); 
+                          const quote = quotes[randomIndex]; 
+                          document.getElementById('quote').innerText = quote.quote; 
+                          document.getElementById('author').innerText = `- ${quote.author}`; } 
+// Generate a quote when the page loads window.onload = generateQuote;
